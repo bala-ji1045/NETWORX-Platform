@@ -1,0 +1,14 @@
+# To enable CORS in your FastAPI backend, add the following code to your main FastAPI app file (usually main.py):
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],  # Or ["*"] for all origins (not recommended for production)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Place this code after you create your FastAPI app (app = FastAPI()) and before you define your endpoints.
+# This will allow your React app to make requests to your FastAPI backend during development.
